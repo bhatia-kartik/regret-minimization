@@ -49,6 +49,8 @@ def update_regret(regrets, your_strat_id, opp_strat_id):
         regrets[i]+=regret
 
 def update_probabilities(your_strat_id, opp_strat_id, regrets, probabilities, probabilities_sum):
+    for i in range(num_actions):
+        probabilities_sum[i] += probabilities[i]
     
     update_regret(regrets, your_strat_id, opp_strat_id)
     
@@ -57,7 +59,6 @@ def update_probabilities(your_strat_id, opp_strat_id, regrets, probabilities, pr
     
     for i in range(num_actions):
         probabilities[i] = (positive_regrets[i] / pos_regrets_sum) if (pos_regrets_sum > 0) else (1/num_actions)
-        probabilities_sum[i]+=probabilities[i]
         
 def get_avg_strategy(strategy_sum):
     normalising_sum = sum(strategy_sum)
