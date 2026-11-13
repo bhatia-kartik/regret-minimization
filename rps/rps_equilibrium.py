@@ -26,6 +26,9 @@ def get_move(strategy):
 
 
 def update_strategy(strategy, regret, strategy_sum, strat_list, your_move, opp_move):
+    for a in range(NUM_ACTIONS):
+        strategy_sum[a] += strategy[a]
+    
     action_utility = [0, 0, 0]
     action_utility[opp_move] = 0
     # since rps follows modular arithmetic
@@ -44,9 +47,6 @@ def update_strategy(strategy, regret, strategy_sum, strat_list, your_move, opp_m
     else:
         for a in range(NUM_ACTIONS):
             strategy[a] = 1 / NUM_ACTIONS
-
-    for a in range(NUM_ACTIONS):
-        strategy_sum[a] += strategy[a]
 
     strat_list.append(tuple(get_average_strategy(strategy_sum)))
 
