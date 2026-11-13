@@ -30,8 +30,9 @@ def get_utility(your_strat_id, opp_strat_id):
     results = [your_soldiers - opp_soldiers for your_soldiers, opp_soldiers in zip(your_strat, opp_strat)]
     
     battlefields_won = sum(result > 0 for result in results)
-        
-    utility = (battlefields_won > 1) - (battlefields_won < 1)
+    battlefields_lost = sum(result < 0 for result in results)
+
+    utility = (battlefields_won > battlefields_lost) - (battlefields_won < battlefields_lost)
     
     return utility
 
