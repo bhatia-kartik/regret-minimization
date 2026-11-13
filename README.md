@@ -1,4 +1,4 @@
-My solutions to the exercises from [An Introduction to Counterfactual Regret Minimization, Neller &amp; Lanctot](https://www.ma.imperial.ac.uk/~dturaev/neller-lanctot.pdf) along with some commentary below.
+My solutions to the exercises from [An Introduction to Counterfactual Regret Minimization, Neller &amp; Lanctot](https://www.ma.imperial.ac.uk/~dturaev/neller-lanctot.pdf) along with some commentary below. Also see [rps/](rps/) for a regret-matching bot you can play against in the browser.
 
 ### 2.5 - RPS Equilibrium
 
